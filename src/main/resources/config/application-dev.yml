@@ -52,13 +52,6 @@ spring:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   thymeleaf:
     cache: false
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: 243839176238-hbfn8mc2tggk9mphgdtn07v03mc32c7u.apps.googleusercontent.com
-            client-secret: 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
   redis:
     host: sidoc-test.demo2.siten.vn
     port: 43879
