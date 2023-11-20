@@ -6,8 +6,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.exerciseapp.myapp.IntegrationTest;
-import com.exerciseapp.myapp.domain.User;
-import com.exerciseapp.myapp.repository.UserRepository;
 import com.exerciseapp.myapp.security.AuthoritiesConstants;
 import javax.persistence.EntityManager;
 import org.junit.jupiter.api.BeforeEach;

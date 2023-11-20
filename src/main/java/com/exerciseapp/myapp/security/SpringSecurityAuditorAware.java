@@ -1,6 +1,6 @@
 package com.exerciseapp.myapp.security;
 
-import com.exerciseapp.myapp.config.Constants;
+import com.exerciseapp.myapp.common.constants.Constant;
 import java.util.Optional;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
@@ -13,6 +13,6 @@ public class SpringSecurityAuditorAware implements AuditorAware<String> {
 
     @Override
     public Optional<String> getCurrentAuditor() {
-        return Optional.of(SecurityUtils.getCurrentUserLogin().orElse(Constants.SYSTEM));
+        return Optional.of(SecurityUtils.getCurrentUserLogin().orElse(Constant.SYSTEM));
     }
 }

@@ -10,8 +10,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.exerciseapp.myapp.IntegrationTest;
-import com.exerciseapp.myapp.domain.User;
-import com.exerciseapp.myapp.repository.UserRepository;
 import com.exerciseapp.myapp.web.rest.vm.LoginVM;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

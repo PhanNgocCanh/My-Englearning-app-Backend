@@ -6,13 +6,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.exerciseapp.myapp.IntegrationTest;
-import com.exerciseapp.myapp.domain.Authority;
-import com.exerciseapp.myapp.domain.User;
-import com.exerciseapp.myapp.repository.UserRepository;
 import com.exerciseapp.myapp.security.AuthoritiesConstants;
-import com.exerciseapp.myapp.service.dto.AdminUserDTO;
-import com.exerciseapp.myapp.service.mapper.UserMapper;
-import com.exerciseapp.myapp.web.rest.vm.ManagedUserVM;
 import java.time.Instant;
 import java.util.*;
 import java.util.function.Consumer;

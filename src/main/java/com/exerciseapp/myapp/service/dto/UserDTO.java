@@ -1,51 +1,32 @@
 package com.exerciseapp.myapp.service.dto;
 
-import com.exerciseapp.myapp.domain.User;
-import java.io.Serializable;
+public class UserDTO {
 
-/**
- * A DTO representing a user, with only the public attributes.
- */
-public class UserDTO implements Serializable {
+    private String fullName;
+    private String email;
+    private String password;
 
-    private static final long serialVersionUID = 1L;
-
-    private Long id;
-
-    private String login;
-
-    public UserDTO() {
-        // Empty constructor needed for Jackson.
+    public String getFullName() {
+        return fullName;
     }
 
-    public UserDTO(User user) {
-        this.id = user.getId();
-        // Customize it here if you need, or not, firstName/lastName/etc
-        this.login = user.getLogin();
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public Long getId() {
-        return id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getLogin() {
-        return login;
+    public String getPassword() {
+        return password;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "UserDTO{" +
-            "id='" + id + '\'' +
-            ", login='" + login + '\'' +
-            "}";
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

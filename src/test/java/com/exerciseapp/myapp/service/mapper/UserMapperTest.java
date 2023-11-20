@@ -2,9 +2,6 @@ package com.exerciseapp.myapp.service.mapper;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.exerciseapp.myapp.domain.User;
-import com.exerciseapp.myapp.service.dto.AdminUserDTO;
-import com.exerciseapp.myapp.service.dto.UserDTO;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

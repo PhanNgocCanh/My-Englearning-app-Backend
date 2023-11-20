@@ -5,8 +5,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 import com.exerciseapp.myapp.IntegrationTest;
-import com.exerciseapp.myapp.config.Constants;
-import com.exerciseapp.myapp.domain.User;
+import com.exerciseapp.myapp.common.constants.Constant;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -125,7 +124,7 @@ class MailServiceIT {
     @Test
     void testSendEmailFromTemplate() throws Exception {
         User user = new User();
-        user.setLangKey(Constants.DEFAULT_LANGUAGE);
+        user.setLangKey(Constant.DEFAULT_LANGUAGE);
         user.setLogin("john");
         user.setEmail("john.doe@example.com");
         mailService.sendEmailFromTemplate(user, "mail/testEmail", "email.test.title");
@@ -141,7 +140,7 @@ class MailServiceIT {
     @Test
     void testSendActivationEmail() throws Exception {
         User user = new User();
-        user.setLangKey(Constants.DEFAULT_LANGUAGE);
+        user.setLangKey(Constant.DEFAULT_LANGUAGE);
         user.setLogin("john");
         user.setEmail("john.doe@example.com");
         mailService.sendActivationEmail(user);
@@ -156,7 +155,7 @@ class MailServiceIT {
     @Test
     void testCreationEmail() throws Exception {
         User user = new User();
-        user.setLangKey(Constants.DEFAULT_LANGUAGE);
+        user.setLangKey(Constant.DEFAULT_LANGUAGE);
         user.setLogin("john");
         user.setEmail("john.doe@example.com");
         mailService.sendCreationEmail(user);
@@ -171,7 +170,7 @@ class MailServiceIT {
     @Test
     void testSendPasswordResetMail() throws Exception {
         User user = new User();
-        user.setLangKey(Constants.DEFAULT_LANGUAGE);
+        user.setLangKey(Constant.DEFAULT_LANGUAGE);
         user.setLogin("john");
         user.setEmail("john.doe@example.com");
         mailService.sendPasswordResetMail(user);

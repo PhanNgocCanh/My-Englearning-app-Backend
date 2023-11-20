@@ -6,17 +6,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.exerciseapp.myapp.IntegrationTest;
-import com.exerciseapp.myapp.config.Constants;
-import com.exerciseapp.myapp.domain.User;
-import com.exerciseapp.myapp.repository.AuthorityRepository;
-import com.exerciseapp.myapp.repository.UserRepository;
+import com.exerciseapp.myapp.common.constants.Constant;
 import com.exerciseapp.myapp.security.AuthoritiesConstants;
-import com.exerciseapp.myapp.service.UserService;
-import com.exerciseapp.myapp.service.dto.AdminUserDTO;
-import com.exerciseapp.myapp.service.dto.PasswordChangeDTO;
-import com.exerciseapp.myapp.service.dto.UserDTO;
-import com.exerciseapp.myapp.web.rest.vm.KeyAndPasswordVM;
-import com.exerciseapp.myapp.web.rest.vm.ManagedUserVM;
 import java.time.Instant;
 import java.util.*;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -123,7 +114,7 @@ class AccountResourceIT {
         validUser.setLastName("Test");
         validUser.setEmail("test-register-valid@example.com");
         validUser.setImageUrl("http://placehold.it/50x50");
-        validUser.setLangKey(Constants.DEFAULT_LANGUAGE);
+        validUser.setLangKey(Constant.DEFAULT_LANGUAGE);
         validUser.setAuthorities(Collections.singleton(AuthoritiesConstants.USER));
         assertThat(userRepository.findOneByLogin("test-register-valid")).isEmpty();
 
@@ -145,7 +136,7 @@ class AccountResourceIT {
         invalidUser.setEmail("funky@example.com");
         invalidUser.setActivated(true);
         invalidUser.setImageUrl("http://placehold.it/50x50");
-        invalidUser.setLangKey(Constants.DEFAULT_LANGUAGE);
+        invalidUser.setLangKey(Constant.DEFAULT_LANGUAGE);
         invalidUser.setAuthorities(Collections.singleton(AuthoritiesConstants.USER));
 
         restAccountMockMvc
@@ -167,7 +158,7 @@ class AccountResourceIT {
         invalidUser.setEmail("invalid"); // <-- invalid
         invalidUser.setActivated(true);
         invalidUser.setImageUrl("http://placehold.it/50x50");
-        invalidUser.setLangKey(Constants.DEFAULT_LANGUAGE);
+        invalidUser.setLangKey(Constant.DEFAULT_LANGUAGE);
         invalidUser.setAuthorities(Collections.singleton(AuthoritiesConstants.USER));
 
         restAccountMockMvc
@@ -189,7 +180,7 @@ class AccountResourceIT {
         invalidUser.setEmail("bob@example.com");
         invalidUser.setActivated(true);
         invalidUser.setImageUrl("http://placehold.it/50x50");
-        invalidUser.setLangKey(Constants.DEFAULT_LANGUAGE);
+        invalidUser.setLangKey(Constant.DEFAULT_LANGUAGE);
         invalidUser.setAuthorities(Collections.singleton(AuthoritiesConstants.USER));
 
         restAccountMockMvc
@@ -211,7 +202,7 @@ class AccountResourceIT {
         invalidUser.setEmail("bob@example.com");
         invalidUser.setActivated(true);
         invalidUser.setImageUrl("http://placehold.it/50x50");
-        invalidUser.setLangKey(Constants.DEFAULT_LANGUAGE);
+        invalidUser.setLangKey(Constant.DEFAULT_LANGUAGE);
         invalidUser.setAuthorities(Collections.singleton(AuthoritiesConstants.USER));
 
         restAccountMockMvc
@@ -233,7 +224,7 @@ class AccountResourceIT {
         firstUser.setLastName("Something");
         firstUser.setEmail("alice@example.com");
         firstUser.setImageUrl("http://placehold.it/50x50");
-        firstUser.setLangKey(Constants.DEFAULT_LANGUAGE);
+        firstUser.setLangKey(Constant.DEFAULT_LANGUAGE);
         firstUser.setAuthorities(Collections.singleton(AuthoritiesConstants.USER));
 
         // Duplicate login, different email
@@ -283,7 +274,7 @@ class AccountResourceIT {
         firstUser.setLastName("Test");
         firstUser.setEmail("test-register-duplicate-email@example.com");
         firstUser.setImageUrl("http://placehold.it/50x50");
-        firstUser.setLangKey(Constants.DEFAULT_LANGUAGE);
+        firstUser.setLangKey(Constant.DEFAULT_LANGUAGE);
         firstUser.setAuthorities(Collections.singleton(AuthoritiesConstants.USER));
 
         // Register first user
@@ -361,7 +352,7 @@ class AccountResourceIT {
         validUser.setEmail("badguy@example.com");
         validUser.setActivated(true);
         validUser.setImageUrl("http://placehold.it/50x50");
-        validUser.setLangKey(Constants.DEFAULT_LANGUAGE);
+        validUser.setLangKey(Constant.DEFAULT_LANGUAGE);
         validUser.setAuthorities(Collections.singleton(AuthoritiesConstants.ADMIN));
 
         restAccountMockMvc
@@ -418,7 +409,7 @@ class AccountResourceIT {
         userDTO.setEmail("save-account@example.com");
         userDTO.setActivated(false);
         userDTO.setImageUrl("http://placehold.it/50x50");
-        userDTO.setLangKey(Constants.DEFAULT_LANGUAGE);
+        userDTO.setLangKey(Constant.DEFAULT_LANGUAGE);
         userDTO.setAuthorities(Collections.singleton(AuthoritiesConstants.ADMIN));
 
         restAccountMockMvc
@@ -455,7 +446,7 @@ class AccountResourceIT {
         userDTO.setEmail("invalid email");
         userDTO.setActivated(false);
         userDTO.setImageUrl("http://placehold.it/50x50");
-        userDTO.setLangKey(Constants.DEFAULT_LANGUAGE);
+        userDTO.setLangKey(Constant.DEFAULT_LANGUAGE);
         userDTO.setAuthorities(Collections.singleton(AuthoritiesConstants.ADMIN));
 
         restAccountMockMvc
@@ -491,7 +482,7 @@ class AccountResourceIT {
         userDTO.setEmail("save-existing-email2@example.com");
         userDTO.setActivated(false);
         userDTO.setImageUrl("http://placehold.it/50x50");
-        userDTO.setLangKey(Constants.DEFAULT_LANGUAGE);
+        userDTO.setLangKey(Constant.DEFAULT_LANGUAGE);
         userDTO.setAuthorities(Collections.singleton(AuthoritiesConstants.ADMIN));
 
         restAccountMockMvc
@@ -520,7 +511,7 @@ class AccountResourceIT {
         userDTO.setEmail("save-existing-email-and-login@example.com");
         userDTO.setActivated(false);
         userDTO.setImageUrl("http://placehold.it/50x50");
-        userDTO.setLangKey(Constants.DEFAULT_LANGUAGE);
+        userDTO.setLangKey(Constant.DEFAULT_LANGUAGE);
         userDTO.setAuthorities(Collections.singleton(AuthoritiesConstants.ADMIN));
 
         restAccountMockMvc

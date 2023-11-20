@@ -126,7 +126,7 @@ spring:
       hibernate.query.fail_on_pagination_over_collection_fetch: true
       hibernate.query.in_clause_parameter_padding: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
       naming:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
         implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
@@ -153,6 +153,10 @@ spring:
   output:
     ansi:
       console-available: true
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 
 server:
   servlet:
@@ -210,3 +214,8 @@ jhipster:
 # ===================================================================
 
 # application:
+minio:
+  url: http://localhost:9001
+  accessKey: admin
+  secretKey: canh1111
+  default-bucket: exerciseapp
